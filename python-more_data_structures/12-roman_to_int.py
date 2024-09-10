@@ -17,7 +17,3 @@ def roman_to_int(roman_string):
     return result
 
 
-# je regarde chaque caractères dans la string donné: --> IX
-# je regarde si chiffre plus petit a gauche, alors soustraction
-# sinon addition de result
-
