@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ defines square class """
 
+
 class Square:
     """ Square Class """
     def __init__(self, size=0):
@@ -40,4 +41,4 @@ class Square:
             for row in range(self.__size):
                 for line in range(self.__size):
                     print("#", end="")
-                print("")
+                print()
