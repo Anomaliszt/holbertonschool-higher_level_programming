@@ -1,20 +1,14 @@
 #!/usr/bin/python3
-"""
-This module defines a class Square with size validation.
+""" defines square class"""
 
-Classes:
-	Square: class deined square with pruvate size
-                and validates the size during init
 
-Methods:
-	__init__(self, size=0): Init square with size.
-
-Raises:
-	TypeError: If size is not an int
-	ValueError: If size is less than zero
-"""
 class Square:
+    """ Class Square"""
     def __init__(self, size=0):
+        """
+        Method __init__: Initialize data
+        size: size of square
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
@@ -22,4 +16,7 @@ class Square:
         self.__size = size
 
     def area(self):
+        """
+        returns square area
+        """
         return self.__size * self.__size
