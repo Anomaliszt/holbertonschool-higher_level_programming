@@ -53,6 +53,7 @@ class Square:
         """ print square and print space based on position and size """
         if self.__size == 0:
             print("")
+            return
         for i in range(self.__position[1]):
             print()
         for row in range(self.__size):
