@@ -64,4 +64,4 @@ class Rectangle:
 
     def __def__(self):
         """ message when instance is deleted """
-        print("Bye rectangle. . .")
+        print("Bye rectangle...")
