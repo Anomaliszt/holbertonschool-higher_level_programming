@@ -10,3 +10,10 @@
 98
 
 >>> add_integer(2)
+
+>>> add_intenger (46545.5, patte, chèvre)
+Traceback (most recent call last):
+  File "/home/saki/holbertonschool-higher_level_programming/python-test_driven_development/./0-main.py", line 8, in <module>
+    print(add_intenger (46545.5, patte, chèvre))
+NameError: name 'add_intenger' is not defined. Did you mean: 'add_integer'?
+
