@@ -31,6 +31,7 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """ class square which inherits from rectangle"""
     def __init__(self, size):
         """ method that initializes square"""
         self.integer_validator("size", size)
