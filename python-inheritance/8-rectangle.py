@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" 2 classes with one that inherits from parent"""
+""" class validated by method """
 
 
 class BaseGeometry:
-    """ class baseGeometry """
+    """ class BaseGeometry"""
+    def area(self):
+        """ method that returns area, not implemented"""
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """ method that validates int for geometry"""
         if not isinstance(value, int):
@@ -13,9 +17,9 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """ class rectangle that inherits from basegeometry"""
+    """Rectangle class that inherits from BaseGeometry"""
     def __init__(self, width, height):
-        """method that initializes rectangle """
+        """Initializes width and height with validation"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
