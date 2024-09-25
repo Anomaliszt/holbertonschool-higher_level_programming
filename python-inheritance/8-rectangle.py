@@ -4,10 +4,6 @@
 
 class BaseGeometry:
     """ class baseGeometry """
-    def area(self):
-        """ method that returns area, not yet implemented"""
-        raise Exception("area() is not implemented")
-
     def integer_validator(self, name, value):
         """ method that validates int for geometry"""
         if not isinstance(value, int):
@@ -24,3 +20,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
+    def area(self):
+        """ method that returns area, not yet implemented"""
+        raise Exception("area() is not implemented")
