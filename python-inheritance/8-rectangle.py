@@ -20,7 +20,3 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
-    def area(self):
-        """ method that returns area, not yet implemented"""
-        raise Exception("area() is not implemented")
