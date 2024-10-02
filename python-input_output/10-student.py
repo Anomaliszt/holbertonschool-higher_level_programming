@@ -18,4 +18,8 @@ class Student:
         """ if attris is a list of str, only attribute name is retrived"""
         if attrs is None:
             return self.__dict__
-        dictionary = {}
+        dict = {}
+        for i in attrs:
+            if i in self.__dict__.keys():
+                dict[i] = self.__dict__[i]
+        return dict
