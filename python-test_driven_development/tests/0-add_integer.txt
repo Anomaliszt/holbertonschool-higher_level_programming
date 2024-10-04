@@ -1,19 +1,34 @@
->>> add_integer = __import__('0-add_integer').add_integer
+********************************
+* The ``0-add_integer`` module *
+********************************
 
->>> add_integer(1, 2)
-3
+Import the function:
 
->>> add_integer(1.24, 2.4)
-3
+	>>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(100.3, -2)
-98
+Basic cases on success:
 
->>> add_integer(2)
+	>>> add_integer(1, 2)
+	3
+	
+	>>> add_integer(2)
+	100
 
->>> add_intenger (46545.5, patte, chèvre)
-Traceback (most recent call last):
-  File "/home/saki/holbertonschool-higher_level_programming/python-test_driven_development/./0-main.py", line 8, in <module>
-    print(add_intenger (46545.5, patte, chèvre))
-NameError: name 'add_intenger' is not defined. Did you mean: 'add_integer'?
+	>>> add_integer(2.5,3)
+	5
 
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+	
+	>>> add_integer(1000e1000)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+	
+	>>> add_integer(str(STR))
+	Traceback (most recent call last):
+	NameError: name 'STR' is not defined
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer

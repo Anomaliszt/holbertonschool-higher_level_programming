@@ -1,0 +1,52 @@
+********************************
+* How to use 4-print_square.py *
+********************************
+
+Function called 'print_square'
+
+*****************
+* Import module *
+*****************
+
+>>> print_square = __import__('4-print_square').print_square 
+
+
+******************
+* Initialization *
+******************
+
+
+
+**********
+* Return *
+**********
+
+
+
+**************************
+* Basic cases on success *
+**************************
+ 
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+
+******************
+* Cases of Error *
+******************
+
+>>> print_square(-3)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+>>> print_square(3.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(4, 2)
+Traceback (most recent call last):
+TypeError: print_square() takes 1 positional argument but 2 were given

@@ -1,0 +1,41 @@
+************************************
+* How to use 5-text_indentation.py *
+************************************
+Function called 'text_indentation()'
+
+*****************
+* Import module *
+*****************
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+******************
+* Initialization *
+******************
+
+
+
+**********
+* Return *
+**********
+Nothing
+
+
+**************************
+* Basic cases on success *
+**************************
+
+>>> text_indentation('  ')
+
+******************
+* Cases of Error 
+******************
+
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
