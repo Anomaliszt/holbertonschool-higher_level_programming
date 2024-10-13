@@ -45,5 +45,6 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"404 Not Found")
 
+
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     httpd.serve_forever()
