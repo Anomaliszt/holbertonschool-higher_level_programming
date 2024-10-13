@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+"""
+fetch_and_print_posts()
+fetch_and_save_posts()
+"""
 
 
 import requests
 import csv
 
+
 def fetch_and_print_posts():
+    """  print out the titles of all the posts """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
 
     print("Status Code: {}".format(response.status_code))
@@ -13,9 +19,11 @@ def fetch_and_print_posts():
         posts = response.json()
 
         for post in posts:
-            print(['Title'])
+            print(post['title'])
+
 
 def fetch_and_save_posts():
+    """ CSV file called posts.csv with columns to the dictionary keys. """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
 
     if response.status_code == 200:
