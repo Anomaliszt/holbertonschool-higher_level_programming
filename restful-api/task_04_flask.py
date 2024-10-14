@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ """
 
-from flask import Flask
+from flask import Flask, jsonify
 
 
 app = Flask(__name__)
@@ -12,3 +12,9 @@ def home():
 
 if __name__ == "__main__":
     app.run()
+
+users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+
+@app.route('/data')
+def current_users():
+    return jsonify(users)
