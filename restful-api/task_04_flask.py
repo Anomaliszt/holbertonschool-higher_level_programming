@@ -16,7 +16,7 @@ users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 @app.route('/data')
 def current_users():
-    return jsonify(users)
+    return jsonify(list(users.keys()))
 
 @app.route('/status')
 def return_status():
