@@ -24,7 +24,11 @@ def return_status():
 
 @app.route('/users/<username>')
 def get_user(username):
-    return jsonify(users[username])
+    user = users.get("username")
+    if user:
+        return jsonify(user)
+    else:
+        return jsonify({"error": "User not found"}), 404
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
