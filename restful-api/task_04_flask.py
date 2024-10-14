@@ -34,7 +34,13 @@ def get_user(username):
     """ Return the user details """
     user = users.get(username)
     if user:
-        return jsonify(user)
+        user_response = {
+            "username": username,
+            "name": user["name"],
+            "age": user["age"],
+            "city": user["city"]
+        }
+        return jsonify(user_response)
     else:
         return jsonify({"error": "User not found"}), 404
 
