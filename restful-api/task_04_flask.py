@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+""" Flask API with GET and POST methods """
 
 from flask import Flask, jsonify, request
 
@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    """ Home page """
     return "Welcome to the Flask API!"
 
 if __name__ == "__main__":
@@ -16,14 +17,17 @@ users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
 @app.route('/data')
 def current_users():
+    """ Return the list of users """
     return jsonify(list(users.keys()))
 
 @app.route('/status')
 def return_status():
+    """ Return the status of the API """
     return "OK"
 
 @app.route('/users/<username>')
 def get_user(username):
+    """ Return the user details """
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -32,6 +36,7 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
+    """ Add a new user """
     user = request.get_json()
 
     username = user.get("username")
@@ -52,4 +57,4 @@ def add_user():
             "age": user.get("age"),
             "city": user.get("city")
         }
-    })
+    }), 201
