@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 """ Flask API with GET and POST methods """
 
+
 from flask import Flask, jsonify, request
 
+
 app = Flask(__name__)
+
 
 @app.route('/')
 def home():
@@ -15,15 +18,18 @@ if __name__ == "__main__":
 
 users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
 
+
 @app.route('/data')
 def current_users():
     """ Return the list of users """
     return jsonify(list(users.keys()))
 
+
 @app.route('/status')
 def return_status():
     """ Return the status of the API """
     return "OK"
+
 
 @app.route('/users/<username>')
 def get_user(username):
@@ -33,6 +39,7 @@ def get_user(username):
         return jsonify(user)
     else:
         return jsonify({"error": "User not found"}), 404
+
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
