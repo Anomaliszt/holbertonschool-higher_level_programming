@@ -14,10 +14,6 @@ def home():
     return "Welcome to the Flask API!"
 
 
-if __name__ == "__main__":
-    app.run()
-
-
 users = {}
 
 
@@ -67,3 +63,7 @@ def add_user():
             "city": user.get("city")
         }
     }), 201
+
+
+if __name__ == "__main__":
+    app.run()
