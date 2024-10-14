@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ """
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -26,3 +26,14 @@ def return_status():
 def get_user(username):
     return jsonify(users[username])
 
+@app.route('/add_user')
+def add_user():
+    user = request.get_json()
+
+    users[user] = {
+        "name": user.get("name"),
+        "age": user.get("age"),
+        "city": user.get("city")
+    }
+
+    return ("{} has been added successfully".format(user))
