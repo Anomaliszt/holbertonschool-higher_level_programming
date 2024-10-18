@@ -30,14 +30,14 @@ users = {
 }
 
 
-app.route("basic_protected", methods=["GET"])
+@app.route("basic_protected", methods=["GET"])
 @auth.login_required
 def basic_security():
     """ Basic Auth protected route """
     return "Basic Auth: Access Granted"
 
 
-app.route("/login", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def login():
     """ Login route """
     username = request.json.get("username", None)
@@ -51,7 +51,7 @@ def login():
     return jsonify(access_token=access_token), 200
 
 
-app.route("/jwt-protected", methods=["GET"])
+@app.route("/jwt-protected", methods=["GET"])
 @jwt_required()
 def jwt_security():
     """ JWT protected route """
