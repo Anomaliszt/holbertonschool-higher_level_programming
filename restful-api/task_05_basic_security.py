@@ -14,7 +14,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config["JWT_SECRET"] = "super-secret"
+app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
 users = {
     "user1": {
@@ -30,7 +30,7 @@ users = {
 }
 
 
-@app.route("basic_protected", methods=["GET"])
+@app.route("/basic_protected", methods=["GET"])
 @auth.login_required
 def basic_security():
     """ Basic Auth protected route """
