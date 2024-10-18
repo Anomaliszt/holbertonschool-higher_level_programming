@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """ Basic security with Flask-JWT-Extended """
 
+
 from flask import Flask, jsonify, request
 
 from flask_httpauth import HTTPBasicAuth
